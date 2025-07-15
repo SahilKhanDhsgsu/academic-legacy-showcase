@@ -5,28 +5,28 @@ import { Card, CardContent } from "@/components/ui/card";
 const AchievementsGrid = () => {
   const achievements = [
     {
-      icon: <Award className="h-8 w-8 text-amber-600" />,
+      icon: <Award className="h-8 w-8 text-white" />,
       number: "150+",
       label: "Awards & Honors",
       description: "Recognition across teaching, research, and service",
       gradient: "from-amber-500 to-orange-500"
     },
     {
-      icon: <BookOpen className="h-8 w-8 text-blue-600" />,
+      icon: <BookOpen className="h-8 w-8 text-white" />,
       number: "200+",
       label: "Publications",
       description: "Books, journal articles, and conference papers",
       gradient: "from-blue-500 to-indigo-500"
     },
     {
-      icon: <Users className="h-8 w-8 text-green-600" />,
+      icon: <Users className="h-8 w-8 text-white" />,
       number: "1000+",
       label: "Students Mentored",
       description: "Undergraduate and graduate students guided",
       gradient: "from-green-500 to-emerald-500"
     },
     {
-      icon: <Calendar className="h-8 w-8 text-purple-600" />,
+      icon: <Calendar className="h-8 w-8 text-white" />,
       number: "30",
       label: "Years Experience",
       description: "Dedicated service in academia",

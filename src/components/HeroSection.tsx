@@ -43,7 +43,7 @@ const HeroSection = () => {
                 </Link>
               </Button>
               
-              <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm transition-all duration-300">
+              <Button variant="outline" size="lg" className="border-white/30 hover:bg-white/60 hover:border-white/50 hover:scale-105 text-black backdrop-blur-sm transition-all duration-300">
                 <Download className="mr-2 h-5 w-5" />
                 Download CV
               </Button>

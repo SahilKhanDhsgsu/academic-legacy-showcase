@@ -31,14 +31,14 @@ const CallToAction = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            <Link to="/research">
+            <Link to="/research" onClick={() =>window.scrollTo({top:0, behavior:"smooth"})}>
               View Research
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
           
-          <Button asChild variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm transition-all duration-300">
-            <Link to="/publications">
+          <Button asChild variant="outline" size="lg" className="border-white/30 hover:bg-white/60 hover:border-white/50 hover:scale-105 text-black backdrop-blur-sm transition-all duration-300">
+            <Link to="/publications" onClick={() =>window.scrollTo({top:0, behavior:"smooth"})}>
               Browse Publications
               <BookOpen className="ml-2 h-5 w-5" />
             </Link>

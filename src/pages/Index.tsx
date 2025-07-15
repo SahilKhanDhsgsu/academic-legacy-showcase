@@ -2,7 +2,6 @@
 import HeroSection from "@/components/HeroSection";
 import AchievementsGrid from "@/components/AchievementsGrid";
 import RecentHighlights from "@/components/RecentHighlights";
-import CallToAction from "@/components/CallToAction";
 
 const Index = () => {
   return (
@@ -10,7 +9,6 @@ const Index = () => {
       <HeroSection />
       <AchievementsGrid />
       <RecentHighlights />
-      <CallToAction />
     </div>
   );
 };

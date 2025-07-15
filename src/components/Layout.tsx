@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import CallToAction from "./CallToAction";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,9 +26,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-100">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-200">
+      <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-200" onClick={() =>window.scrollTo({top:0, behavior:"smooth"})}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo/Name */}
@@ -108,6 +109,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <main className="flex-1">
         {children}
       </main>
+
+        {/* call to action */}
+        <CallToAction />
 
       {/* Footer */}
       <footer className="bg-slate-800 text-white">
