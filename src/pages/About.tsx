@@ -101,7 +101,7 @@ const About = () => {
                     </p>
 
                     <p className="text-slate-700 leading-relaxed mb-6">
-                      Her research portfolio spans 82 pages of comprehensive academic work, 
+                      Her research work has comprehensive academic work, 
                       encompassing various aspects of educational theory, methodology, and practice. 
                       Professor Gupta's publications contribute significantly to the discourse on 
                       modern educational approaches and have influenced educational policies and 

@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
-const Service = () => {
+const Experiences = () => {
   const serviceStats = [
     { icon: <Building className="h-6 w-6 text-blue-600" />, number: "25+", label: "Committee Positions" },
     { icon: <Globe className="h-6 w-6 text-green-600" />, number: "15", label: "Editorial Boards" },
@@ -159,7 +159,7 @@ const Service = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-slate-800 mb-6">
-              Service & Outreach
+              Experiences & Outreach
             </h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Dedicated service to the academic community, educational institutions, 
@@ -396,4 +396,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default Experiences;

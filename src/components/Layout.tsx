@@ -23,27 +23,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { name: "About", path: "/about" },
     { name: "Research", path: "/research" },
     { name: "Teaching", path: "/teaching" },
-    {
-      name: "Publications",
-      path: "/publications",
-      dropdown: [
-        { name: "Books", path: "/publications#books" },
-        { name: "Journal Articles", path: "/publications#journals" },
-        { name: "Conference Papers", path: "/publications#conferences" },
-        { name: "Other Works", path: "/publications#other" },
-      ],
-    },
-    {
-      name: "Awards",
-      path: "/awards",
-      dropdown: [
-        { name: "Teaching Awards", path: "/awards#teaching" },
-        { name: "Research Awards", path: "/awards#research" },
-        { name: "Service Awards", path: "/awards#service" },
-        { name: "International Recognition", path: "/awards#international" },
-      ],
-    },
-    { name: "Service", path: "/service" },
+    { name: "Publications", path: "/publications" },
+    { name: "Awards", path: "/awards" },
+    { name: "Experiences", path: "/experiences" },
     { name: "Contact", path: "/contact" },
     { name: "Blog", path: "/blog" },
   ];

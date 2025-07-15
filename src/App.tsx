@@ -11,7 +11,7 @@ import Research from "./pages/Research";
 import Teaching from "./pages/Teaching";
 import Publications from "./pages/Publications";
 import Awards from "./pages/Awards";
-import Service from "./pages/Service";
+import Experiences from "./pages/Experiences";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
@@ -32,7 +32,7 @@ const App = () => (
             <Route path="/teaching" element={<Teaching />} />
             <Route path="/publications" element={<Publications />} />
             <Route path="/awards" element={<Awards />} />
-            <Route path="/service" element={<Service />} />
+            <Route path="/experiences" element={<Experiences />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="*" element={<NotFound />} />
