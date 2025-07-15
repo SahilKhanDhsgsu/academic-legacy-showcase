@@ -1,15 +1,9 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Search, ChevronDown } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,48 +40,17 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-1">
               {navigationItems.map((item) => (
-                <div key={item.name}>
-                  {item.dropdown ? (
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button
-                          variant="ghost"
-                          className={`flex items-center space-x-1 px-3 py-2 text-sm font-medium transition-colors ${
-                            isActive(item.path)
-                              ? "text-slate-900 bg-slate-100"
-                              : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
-                          }`}
-                        >
-                          <span>{item.name}</span>
-                          <ChevronDown className="h-4 w-4" />
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent className="bg-white shadow-lg border border-slate-200">
-                        {item.dropdown.map((subItem) => (
-                          <DropdownMenuItem key={subItem.name} asChild>
-                            <Link
-                              to={subItem.path}
-                              className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900"
-                            >
-                              {subItem.name}
-                            </Link>
-                          </DropdownMenuItem>
-                        ))}
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  ) : (
-                    <Link
-                      to={item.path}
-                      className={`px-3 py-2 text-sm font-medium transition-colors ${
-                        isActive(item.path)
-                          ? "text-slate-900 bg-slate-100 rounded-md"
-                          : "text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md"
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </div>
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`px-3 py-2 text-sm font-medium transition-colors ${
+                    isActive(item.path)
+                      ? "text-slate-900 bg-slate-100 rounded-md"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md"
+                  }`}
+                >
+                  {item.name}
+                </Link>
               ))}
             </nav>
 
@@ -123,33 +86,18 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="lg:hidden bg-white border-t border-slate-200">
             <div className="px-4 py-2 space-y-1">
               {navigationItems.map((item) => (
-                <div key={item.name}>
-                  <Link
-                    to={item.path}
-                    className={`block px-3 py-2 text-base font-medium transition-colors ${
-                      isActive(item.path)
-                        ? "text-slate-900 bg-slate-100 rounded-md"
-                        : "text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md"
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                  {item.dropdown && (
-                    <div className="ml-4 mt-1 space-y-1">
-                      {item.dropdown.map((subItem) => (
-                        <Link
-                          key={subItem.name}
-                          to={subItem.path}
-                          className="block px-3 py-1 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          {subItem.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`block px-3 py-2 text-base font-medium transition-colors ${
+                    isActive(item.path)
+                      ? "text-slate-900 bg-slate-100 rounded-md"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
               ))}
             </div>
           </div>
@@ -191,7 +139,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <h4 className="text-md font-semibold mb-4">Resources</h4>
               <ul className="space-y-2 text-sm text-slate-300">
                 <li><Link to="/teaching" className="hover:text-white transition-colors">Teaching</Link></li>
-                <li><Link to="/service" className="hover:text-white transition-colors">Service</Link></li>
+                <li><Link to="/experiences" className="hover:text-white transition-colors">Service</Link></li>
                 <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
                 <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
               </ul>
