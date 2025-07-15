@@ -1,6 +1,13 @@
-
 import { useState } from "react";
-import { Mail, Phone, MapPin, Clock, Send, User, MessageSquare } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  User,
+  MessageSquare,
+} from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,16 +22,18 @@ const Contact = () => {
     email: "",
     subject: "",
     message: "",
-    category: "general"
+    category: "general",
   });
-  
+
   const { toast } = useToast();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -32,19 +41,20 @@ const Contact = () => {
     e.preventDefault();
     // Here you would typically send the form data to a backend service
     console.log("Form submitted:", formData);
-    
+
     toast({
       title: "Message Sent Successfully",
-      description: "Thank you for your inquiry. I will respond within 24 hours.",
+      description:
+        "Thank you for your inquiry. I will respond within 24 hours.",
     });
-    
+
     // Reset form
     setFormData({
       name: "",
       email: "",
       subject: "",
       message: "",
-      category: "general"
+      category: "general",
     });
   };
 
@@ -54,35 +64,39 @@ const Contact = () => {
       title: "Email",
       primary: "sarojgupta1234@gmail.com",
       secondary: "Official university email",
-      href: "mailto:sarojgupta1234@gmail.com"
+      href: "mailto:sarojgupta1234@gmail.com",
     },
     {
       icon: <Phone className="h-6 w-6 text-green-600" />,
       title: "Phone",
       primary: "+91-9425693570",
       secondary: "+91-7000696501",
-      href: "tel:+919425693570"
+      href: "tel:+919425693570",
     },
     {
       icon: <MapPin className="h-6 w-6 text-red-600" />,
       title: "Office Address",
       primary: "Department of Education",
       secondary: "Dr. Harisingh Gour University, Sagar (M.P.) 470001",
-      href: "#"
+      href: "#",
     },
     {
       icon: <Clock className="h-6 w-6 text-purple-600" />,
       title: "Office Hours",
       primary: "Monday - Friday: 10:00 AM - 5:00 PM",
       secondary: "Saturday: 10:00 AM - 2:00 PM",
-      href: "#"
-    }
+      href: "#",
+    },
   ];
 
   const officeHours = [
-    { day: "Monday - Friday", time: "10:00 AM - 5:00 PM", type: "Regular Hours" },
+    {
+      day: "Monday - Friday",
+      time: "10:00 AM - 5:00 PM",
+      type: "Regular Hours",
+    },
     { day: "Saturday", time: "10:00 AM - 2:00 PM", type: "Limited Hours" },
-    { day: "Sunday", time: "Closed", type: "Weekend" }
+    { day: "Sunday", time: "Closed", type: "Weekend" },
   ];
 
   const inquiryTypes = [
@@ -91,7 +105,7 @@ const Contact = () => {
     { value: "academic", label: "Academic Consultation" },
     { value: "student", label: "Student Mentorship" },
     { value: "speaking", label: "Speaking Engagement" },
-    { value: "media", label: "Media & Press" }
+    { value: "media", label: "Media & Press" },
   ];
 
   return (
@@ -104,8 +118,9 @@ const Contact = () => {
               Contact Information
             </h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              I welcome opportunities for collaboration, consultation, and academic discourse. 
-              Please feel free to reach out for any professional inquiries.
+              I welcome opportunities for collaboration, consultation, and
+              academic discourse. Please feel free to reach out for any
+              professional inquiries.
             </p>
           </div>
         </div>
@@ -116,27 +131,29 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="bg-white border-slate-200 hover:shadow-lg transition-shadow">
+              <Card
+                key={index}
+                className="bg-white border-slate-200 hover:shadow-lg transition-shadow"
+              >
                 <CardContent className="p-6 text-center">
-                  <div className="flex justify-center mb-4">
-                    {info.icon}
-                  </div>
+                  <div className="flex justify-center mb-4">{info.icon}</div>
                   <h3 className="text-lg font-semibold text-slate-800 mb-3">
                     {info.title}
                   </h3>
                   <div className="space-y-1">
                     <p className="text-slate-700 font-medium">
                       {info.href !== "#" ? (
-                        <a href={info.href} className="hover:text-blue-600 transition-colors">
+                        <a
+                          href={info.href}
+                          className="hover:text-blue-600 transition-colors"
+                        >
                           {info.primary}
                         </a>
                       ) : (
                         info.primary
                       )}
                     </p>
-                    <p className="text-sm text-slate-600">
-                      {info.secondary}
-                    </p>
+                    <p className="text-sm text-slate-600">{info.secondary}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -158,7 +175,8 @@ const Contact = () => {
                     Send a Message
                   </CardTitle>
                   <p className="text-slate-600">
-                    Please fill out this form for any professional inquiries. I aim to respond within 24 hours.
+                    Please fill out this form for any professional inquiries. I
+                    aim to respond within 24 hours.
                   </p>
                 </CardHeader>
                 <CardContent>
@@ -198,7 +216,12 @@ const Contact = () => {
                         id="category"
                         name="category"
                         value={formData.category}
-                        onChange={(e) => setFormData(prev => ({ ...prev, category: e.target.value }))}
+                        onChange={(e) =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            category: e.target.value,
+                          }))
+                        }
                         className="mt-1 w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       >
                         {inquiryTypes.map((type) => (
@@ -237,7 +260,11 @@ const Contact = () => {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full bg-blue-600 hover:bg-blue-700">
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full bg-blue-600 hover:bg-blue-700"
+                    >
                       <Send className="h-5 w-5 mr-2" />
                       Send Message
                     </Button>
@@ -259,11 +286,17 @@ const Contact = () => {
                     {officeHours.map((hours, index) => (
                       <div key={index}>
                         <div className="flex justify-between items-center">
-                          <span className="font-medium text-slate-800">{hours.day}</span>
+                          <span className="font-medium text-slate-800">
+                            {hours.day}
+                          </span>
                           <span className="text-slate-600">{hours.time}</span>
                         </div>
-                        <p className="text-xs text-slate-500 mt-1">{hours.type}</p>
-                        {index < officeHours.length - 1 && <Separator className="mt-3" />}
+                        <p className="text-xs text-slate-500 mt-1">
+                          {hours.type}
+                        </p>
+                        {index < officeHours.length - 1 && (
+                          <Separator className="mt-3" />
+                        )}
                       </div>
                     ))}
                   </div>
@@ -330,12 +363,14 @@ const Contact = () => {
               </p>
             </CardHeader>
             <CardContent>
-              <div className="h-64 bg-slate-100 rounded-lg flex items-center justify-center">
-                <div className="text-center text-slate-500">
-                  <MapPin className="h-12 w-12 mx-auto mb-4" />
-                  <p>Interactive map would be embedded here</p>
-                  <p className="text-sm mt-2">Sagar, Madhya Pradesh 470001, India</p>
-                </div>
+              <div className="h-96 bg-slate-100 rounded-lg flex items-center justify-center">
+                <iframe
+                className="w-full h-full"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.7932541638656!2d78.76864461105184!3d23.82594978578227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3978d15c01940a2b%3A0x53f0bc9db8fc188e!2sDr.%20Hari%20Singh%20Gour%20Vishwavidyalaya!5e0!3m2!1sen!2sin!4v1752566270295!5m2!1sen!2sin"
+                  style={{ border: "0" }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </CardContent>
           </Card>

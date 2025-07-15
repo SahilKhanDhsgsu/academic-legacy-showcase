@@ -67,7 +67,7 @@ const Index = () => {
               <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-2xl">
                 With over three decades of dedication to academic excellence, research innovation, 
                 and student mentorship. Recipient of 150+ awards and author of numerous 
-                influential publications spanning 82 pages of scholarly contributions.
+                influential publications spanning years of scholarly contributions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
@@ -76,7 +76,7 @@ const Index = () => {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-slate-800">
+                <Button variant="outline" size="lg" className="border-white text-black hover:bg-neutral-300 hover:text-black">
                   <Download className="mr-2 h-5 w-5" />
                   Download CV
                 </Button>
@@ -193,7 +193,7 @@ const Index = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-slate-800">
+            <Button asChild variant="outline" size="lg" className="border-white text-black hover:bg-neutral-300 hover:text-black">
               <Link to="/publications">
                 Browse Publications
                 <BookOpen className="ml-2 h-5 w-5" />
